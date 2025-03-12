@@ -1,29 +1,32 @@
-:root {
-	--foreground-rgb: 0, 0, 0;
-	--background-start-rgb: 214, 219, 220;
-	--background-end-rgb: 255, 255, 255;
+
+a, button {
+	border: none;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+	cursor: pointer;
+}
+button {
+  background-color: #04AA6D; /* Green */
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--foreground-rgb: 255, 255, 255;
-		--background-start-rgb: 0, 0, 0;
-		--background-end-rgb: 0, 0, 0;
-	}
+a, .back-button {
+	background-color: #008CBA; /* Blue */
 }
 
-body {
-	color: rgb(var(--foreground-rgb));
-	background: linear-gradient(
-			to bottom,
-			transparent,
-			rgb(var(--background-end-rgb))
-		)
-		rgb(var(--background-start-rgb));
+.product {
+  color: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5rem 1rem;
 }
 
-@layer utilities {
-	.text-balance {
-		text-wrap: balance;
-	}
+*:disabled {
+  background-color: dimgrey;
+  color: linen;
+  opacity: 1;
+  cursor: not-allowed;
 }

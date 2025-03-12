@@ -26,7 +26,7 @@ function InfiniteScroll() {
 			const res = await axios.get(`/api/products?cursor=${pageParam}`)
 			return res.data
 		},
-		initialPageParam: 0, // Change the value to a positive number to go "backwards", e.g. 5, because product id start at 1.
+		initialPageParam: 0, // Change the value to a positive integer to go "backwards", e.g. 5, because product id start at 1.
 		getPreviousPageParam: (firstPage) => firstPage.previousId ?? undefined,
 		getNextPageParam: (lastPage) => lastPage.nextId ?? undefined,
 	})
@@ -57,23 +57,25 @@ function InfiniteScroll() {
 								? 'Loading more products...'
 								: hasPreviousPage
 									? 'Load older products'
-									: 'Nothing more to load'}
+									: 'At beginning of products list'}
 						</button>
 					</section>
 					{data.pages.map((page) => (
 						<Fragment key={page.nextId}>
 							{page.data.map((product) => (
 								<p
+									className="product"
 									style={{
-										border: '1px solid gray',
-										borderRadius: '5px',
-										padding: '5rem 1rem',
-										background: `hsla(${product.id * 30}, 60%, 80%, 0.5)`, // Just to make each element easier to distinguish when scrolling.
+										background: `hsl(120, 100%, ${(product.id * 10) % 100}%)`, // Just to make each element easier to distinguish when scrolling.
 									}}
 									key={product.id}
 								>
-									{product.name} <br />
-									<img src={product.thumbnail} alt="product thumbnail" />
+									{product.id}:{product.name} <br />
+									<img
+										src={product.thumbnail}
+										alt="product thumbnail"
+										title="product thumbnail"
+									/>
 								</p>
 							))}
 						</Fragment>

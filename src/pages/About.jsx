@@ -1,3 +1,5 @@
+import '../styles/globals.css'
+
 export default () => {
 	return (
 		<div>
@@ -9,6 +11,7 @@ export default () => {
 
 			<button
 				type="button"
+				className="back-button"
 				onClick={(evt) => {
 					window.history.back()
 					evt.preventDefault()
