@@ -70,7 +70,8 @@ function InfiniteScroll() {
 									}}
 									key={product.id}
 								>
-									{product.id}:{product.name} <br />
+									{product.name} <br />
+									Product ID: {product.id} <br />
 									<img
 										src={product.thumbnail}
 										alt="product thumbnail"
