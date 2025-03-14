@@ -60,27 +60,25 @@ function InfiniteScroll() {
 									: 'At beginning of products list'}
 						</button>
 					</section>
-					{data.pages.map((page) => (
-						<Fragment key={page.nextId}>
-							{page.data.map((product) => (
-								<p
-									className="product"
-									style={{
-										background: `hsl(120, 100%, ${(product.id * 10) % 100}%)`, // Just to make each element easier to distinguish when scrolling.
-									}}
-									key={product.id}
-								>
-									{product.name} <br />
-									Product ID: {product.id} <br />
-									<img
-										src={product.thumbnail}
-										alt="product thumbnail"
-										title="product thumbnail"
-									/>
-								</p>
-							))}
-						</Fragment>
-					))}
+					{data.pages
+						.flatMap((page) => page.data)
+						.map((product) => (
+							<p
+								className="product"
+								style={{
+									background: `hsl(120, 100%, ${(product.id * 10) % 100}%)`, // Happy Saint Patrick's Day!🍀
+								}}
+								key={product.id}
+							>
+								{product.name} <br />
+								Product ID: {product.id} <br />
+								<img
+									src={product.thumbnail}
+									alt="product thumbnail"
+									title="product thumbnail"
+								/>
+							</p>
+						))}
 					<section>
 						<button
 							type="button"
