@@ -4,8 +4,9 @@ import axios from 'axios'
 export default async (request, result) => {
 	// Extrapolating the cursor is a common pagination technique. Further reading: https://jsonapi.org/profiles/ethanresnick/cursor-pagination/
 	const cursor = Number.parseInt(request.query.cursor) || 0
+
 	const pageSize = 5
-	const maxProducts = 25 // Adjust this value to simulate more products.
+	const maxProducts = 25 // Adjust this value to get more overall products from api.
 
 	// Ensure cursor does not exceed maxProducts so that we stop scrolling at the proper time.
 	const adjustedCursor = cursor >= maxProducts ? maxProducts - pageSize : cursor
@@ -21,7 +22,7 @@ export default async (request, result) => {
 			id: product.id,
 			thumbnail: product.thumbnail,
 		}))
-		console.log('bacon', response.data.products)
+
 		const nextId =
 			adjustedCursor + pageSize < maxProducts ? adjustedCursor + pageSize : null
 		const previousId =
