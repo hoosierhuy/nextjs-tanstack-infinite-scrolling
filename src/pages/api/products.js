@@ -17,11 +17,12 @@ export default async (request, result) => {
 			`https://dummyjson.com/products?limit=${pageSize}&skip=${adjustedCursor}&select=title,thumbnail,id`,
 		)
 
-		const data = response.data.products.map((product) => ({
-			name: product.title,
-			id: product.id,
-			thumbnail: product.thumbnail,
-		}))
+		const data =
+			response.data?.products.map((product) => ({
+				name: product.title,
+				id: product.id,
+				thumbnail: product.thumbnail,
+			})) ?? []
 
 		const nextId =
 			adjustedCursor + pageSize < maxProducts ? adjustedCursor + pageSize : null

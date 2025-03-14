@@ -61,7 +61,7 @@ function InfiniteScroll() {
 						</button>
 					</section>
 					{data.pages
-						.flatMap((page) => page.data)
+						.flatMap((page) => page?.data ?? [])
 						.map((product) => (
 							<p
 								className="product"
@@ -73,7 +73,7 @@ function InfiniteScroll() {
 								{product.name} <br />
 								Product ID: {product.id} <br />
 								<img
-									src={product.thumbnail}
+									src={product.thumbnail ?? ''}
 									alt="product thumbnail"
 									title="product thumbnail"
 								/>
