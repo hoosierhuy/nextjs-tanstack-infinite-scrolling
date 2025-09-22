@@ -1,23 +1,23 @@
 {
-  "name": "tanstack-infinite-scroll",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "pnpm biome lint --write ./src"
-  },
-  "dependencies": {
-    "@tanstack/react-query": "^5.67.3",
-    "@tanstack/react-query-devtools": "^5.67.3",
-    "axios": "^1.8.2",
-    "next": "15.2.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-intersection-observer": "^9.16.0"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.9.4"
-  }
+	"name": "tanstack-infinite-scroll",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev --turbopack",
+		"build": "next build",
+		"start": "next start",
+		"lint": "pnpm biome lint --write ./src"
+	},
+	"dependencies": {
+		"@tanstack/react-query": "^5.67.3",
+		"@tanstack/react-query-devtools": "^5.67.3",
+		"axios": "^1.8.2",
+		"next": "15.2.1",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"react-intersection-observer": "^9.16.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4"
+	}
 }
