@@ -1,32 +1,39 @@
-
-a, button {
+.link,
+button {
 	border: none;
-  color: white;
-  padding: 1rem 2rem;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1rem;
+	color: white;
+	padding: 1rem 2rem;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 1rem;
 	cursor: pointer;
 }
+.link,
 button {
-  background-color: #04AA6D; /* Green */
+	background-color: #04aa6d; /* Green */
 }
 
-a, .back-button {
-	background-color: #008CBA; /* Blue */
+.link,
+.back-button {
+	background-color: #008cba; /* Blue */
 }
 
 .product {
-  color: white;
-  border: 1px solid gray;
-  border-radius: 5px;
-  padding: 5rem 1rem;
+	color: white;
+	border: 1px solid gray;
+	border-radius: 5px;
+	padding: 5rem 1rem;
 }
 
 *:disabled {
-  background-color: dimgrey;
-  color: linen;
-  opacity: 1;
-  cursor: not-allowed;
+	background-color: dimgrey;
+	color: linen;
+	opacity: 1;
+	cursor: not-allowed;
+}
+
+.big-letter {
+	font-size: 2rem;
+	font-weight: bold;
 }

@@ -12,7 +12,9 @@ export default function HomePage() {
 			</Head>
 			<InfiniteScroll />
 			<hr />
-			<Link href="/About">Learn More About Us</Link>
+			<Link className="link" href="/About">
+				Learn More About Us
+			</Link>
 		</>
 	)
 }
